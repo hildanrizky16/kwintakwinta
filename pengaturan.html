@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Pengaturan · kwintakwinta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/auth.js"></script>
+</head>
+<body data-page="pengaturan">
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main">
+      <header class="page-head">
+        <div><h1>Pengaturan Toko</h1><p class="muted">Data ini otomatis tampil di setiap kuitansi. Simpan dengan Ctrl/Cmd + S.</p></div>
+        <button class="btn btn-primary" id="btn-save" type="button">Simpan Pengaturan</button>
+      </header>
+
+      <div class="st-grid">
+        <div class="stack">
+          <section class="panel">
+            <h2>Informasi Toko</h2>
+            <div class="form-grid">
+              <label class="field full">Nama toko<input id="s-name" autocomplete="off"><small class="err"></small></label>
+              <label class="field full">Alamat<input id="s-address" placeholder="Mis. Sidoarjo, Jawa Timur" autocomplete="off"></label>
+              <label class="field">Nomor WhatsApp<input id="s-whatsapp" inputmode="tel" placeholder="08xxxxxxxxxx"><small class="err"></small></label>
+              <label class="field">Email<input id="s-email" type="email" placeholder="toko@email.com"><small class="err"></small></label>
+              <label class="field full">Instagram<input id="s-instagram" placeholder="@namatoko" autocomplete="off"></label>
+              <label class="field full">Catatan kuitansi<textarea id="s-receiptNote" rows="2" placeholder="Terima kasih telah berbelanja."></textarea></label>
+            </div>
+          </section>
+
+          <section class="panel">
+            <h2>Logo Toko</h2>
+            <div class="logo-row">
+              <div class="logo-box" id="logo-box"></div>
+              <div>
+                <div class="row-actions" style="justify-content:flex-start">
+                  <button class="btn btn-ghost btn-sm" id="btn-logo" type="button">Unggah Logo</button>
+                  <button class="btn btn-ghost btn-sm btn-del" id="btn-logo-del" type="button">Hapus Logo</button>
+                </div>
+                <p class="muted small" style="margin:8px 0 0">PNG, JPG, atau WebP. Otomatis dikecilkan. Tanpa logo, nama toko yang tampil.</p>
+              </div>
+              <input type="file" id="file-logo" accept="image/png,image/jpeg,image/webp" hidden>
+            </div>
+          </section>
+
+          <section class="panel">
+            <h2>Akun</h2>
+            <p class="muted small" id="acct-info" style="margin-top:0"></p>
+            <button class="btn btn-ghost btn-sm" id="btn-logout2" type="button">Keluar dari aplikasi</button>
+          </section>
+
+          <section class="panel">
+            <h2>Data &amp; Backup</h2>
+            <p class="muted small" style="margin-top:0">Data tersimpan di browser ini. Unduh backup secara berkala agar aman jika browser dibersihkan atau Anda pindah perangkat.</p>
+            <div class="row-actions" style="justify-content:flex-start">
+              <button class="btn btn-ghost btn-sm" id="btn-export" type="button">Unduh Backup</button>
+              <button class="btn btn-ghost btn-sm" id="btn-import" type="button">Pulihkan dari Backup</button>
+              <button class="btn btn-ghost btn-sm btn-del" id="btn-wipe" type="button">Hapus Semua Transaksi &amp; Produk</button>
+            </div>
+            <input type="file" id="file-import" accept="application/json,.json" hidden>
+          </section>
+        </div>
+
+        <aside class="st-preview">
+          <div class="muted small" style="margin-bottom:8px;font-weight:600">Pratinjau kuitansi</div>
+          <div id="preview"></div>
+        </aside>
+      </div>
+    </main>
+  </div>
+  <nav class="bottomnav" id="bottomnav" aria-label="Navigasi utama"></nav>
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+
+  <script src="js/utils.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/receipt.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/pengaturan.js"></script>
+</body>
+</html>

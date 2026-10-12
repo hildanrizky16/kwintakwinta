@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Laporan · kwintakwinta</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23f2b134'/%3E%3Ctext x='16' y='23' font-size='20' font-weight='700' text-anchor='middle' font-family='sans-serif' fill='%230f1f2b'%3EK%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/auth.js"></script>
+</head>
+<body data-page="laporan">
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main">
+      <header class="page-head">
+        <div><h1>Laporan Penjualan</h1><p class="muted">Semua angka dihitung dari transaksi yang tersimpan.</p></div>
+        <a class="btn btn-primary" href="transaksi.html">+ Buat Transaksi</a>
+      </header>
+
+      <section class="rp-group"><h2>Penjualan hari ini</h2>
+        <div class="stats">
+          <article class="stat"><span class="stat-label">Total transaksi</span><strong id="t-count">–</strong></article>
+          <article class="stat"><span class="stat-label">Total omzet</span><strong id="t-revenue">–</strong></article>
+          <article class="stat"><span class="stat-label">Produk terjual</span><strong id="t-items">–</strong></article>
+        </div></section>
+      <section class="rp-group"><h2>Penjualan bulan ini</h2>
+        <div class="stats">
+          <article class="stat"><span class="stat-label">Total transaksi</span><strong id="m-count">–</strong></article>
+          <article class="stat"><span class="stat-label">Omzet</span><strong id="m-revenue">–</strong></article>
+          <article class="stat"><span class="stat-label">Rata-rata per transaksi</span><strong id="m-avg">–</strong></article>
+        </div></section>
+
+      <section class="panel">
+        <div class="panel-head"><h2>Grafik penjualan</h2>
+          <div class="tabs tabs-sm" role="tablist">
+            <button role="tab" data-mode="day" aria-selected="true">Harian</button>
+            <button role="tab" data-mode="week" aria-selected="false">Mingguan</button>
+            <button role="tab" data-mode="month" aria-selected="false">Bulanan</button>
+          </div></div>
+        <p class="muted small" id="chart-note"></p>
+        <div class="chart-box" id="chart-box"><canvas id="chart" aria-label="Grafik penjualan"></canvas></div>
+      </section>
+
+      <div class="rp-cols">
+        <section class="panel"><div class="panel-head"><h2>Produk terlaris</h2>
+          <select id="f-period" class="sel-sm" aria-label="Periode"><option value="today">Hari ini</option><option value="7d">7 hari terakhir</option><option value="month" selected>Bulan ini</option></select></div>
+          <div id="top"></div></section>
+        <section class="panel"><div class="panel-head"><h2>Metode pembayaran</h2></div><div id="methods"></div></section>
+      </div>
+    </main>
+  </div>
+  <nav class="bottomnav" id="bottomnav" aria-label="Navigasi utama"></nav>
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/report.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/laporan.js"></script>
+</body>
+</html>

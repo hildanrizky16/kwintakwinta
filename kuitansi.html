@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Kuitansi · kwintakwinta</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23f2b134'/%3E%3Ctext x='16' y='23' font-size='20' font-weight='700' text-anchor='middle' font-family='sans-serif' fill='%230f1f2b'%3EK%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/auth.js"></script>
+</head>
+<body data-page="transaksi">
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main">
+      <header class="page-head">
+        <div><h1>Kuitansi</h1><p class="muted" id="rc-number"></p></div>
+      </header>
+      <div id="rc-root" hidden>
+        <div class="rc-grid">
+          <div id="rc-paper"></div>
+          <aside class="actions">
+            <button class="btn btn-primary" id="btn-print" type="button">Cetak Kuitansi</button>
+            <button class="btn btn-ghost" id="btn-pdf" type="button">Download PDF</button>
+            <button class="btn btn-ghost" id="btn-share" type="button">Bagikan Kuitansi</button>
+            <a class="btn btn-ghost" id="btn-edit" href="#">Edit</a>
+            <a class="btn btn-ghost" id="btn-dup" href="#">Duplikat Transaksi</a>
+            <button class="btn btn-ghost btn-del" id="btn-delete" type="button">Hapus</button>
+            <a class="btn btn-ghost" href="transaksi.html">Buat Transaksi Baru</a>
+            <a class="btn btn-ghost" href="riwayat.html">Kembali ke Riwayat</a>
+          </aside>
+        </div>
+      </div>
+    </main>
+  </div>
+  <nav class="bottomnav" id="bottomnav" aria-label="Navigasi utama"></nav>
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/report.js"></script>
+  <script src="js/product.js"></script>
+  <script src="js/transaction.js"></script>
+  <script src="js/receipt.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/kuitansi.js"></script>
+</body>
+</html>

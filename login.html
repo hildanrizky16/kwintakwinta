@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Masuk · kwintakwinta</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23f2b134'/%3E%3Ctext x='16' y='23' font-size='20' font-weight='700' text-anchor='middle' font-family='sans-serif' fill='%230f1f2b'%3EK%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/login.css">
+  <script src="js/auth.js" data-public></script>
+</head>
+<body>
+  <main class="auth">
+    <section class="hero">
+      <div class="hero-dots"></div>
+      <div class="hero-brand"><span class="brand-mark">K</span>kwintakwinta</div>
+
+      <div class="hero-main">
+        <h1>Catat penjualan.<br>Cetak kuitansi.<br><em>Selesai.</em></h1>
+        <p class="hero-sub">Aplikasi kuitansi dan pencatatan penjualan yang simpel untuk pedagang, reseller, dan UMKM.</p>
+        <ul class="feats">
+          <li><span class="fi"><svg viewBox="0 0 24 24"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg></span><div><b>Kuitansi otomatis</b><small>Cetak atau simpan sebagai PDF dalam satu klik.</small></div></li>
+          <li><span class="fi"><svg viewBox="0 0 24 24"><path d="M4 20V11M10 20V4M16 20v-8M21 20H3"/></svg></span><div><b>Laporan &amp; stok</b><small>Omzet, produk terlaris, dan stok terhitung sendiri.</small></div></li>
+          <li><span class="fi"><svg viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><div><b>Data di perangkat Anda</b><small>Tersimpan lokal, tidak dikirim ke mana pun.</small></div></li>
+        </ul>
+      </div>
+
+      <div class="mock" aria-hidden="true">
+        <div class="mock-top"><b>Toko Anda</b><span>KT-20261010-001</span></div>
+        <div class="mock-row"><i style="width:52%"></i><u></u></div>
+        <div class="mock-row"><i style="width:38%"></i><u></u></div>
+        <div class="mock-row"><i style="width:60%"></i><u></u></div>
+        <div class="mock-total"><span>TOTAL</span><b>Rp205.000</b></div>
+        <div class="mock-stamp">LUNAS</div>
+      </div>
+    </section>
+
+    <section class="panel-auth">
+      <div class="auth-card">
+        <h2 id="a-title"></h2>
+        <p class="muted" id="a-sub"></p>
+        <div class="auth-err" id="a-err" role="alert" hidden></div>
+
+        <form id="a-form" novalidate>
+          <label class="field" data-for="register">Nama pemilik / toko<input id="a-name" autocomplete="name" placeholder="Mis. Budi Santoso"><small class="err"></small></label>
+          <label class="field">Username<input id="a-user" autocomplete="username" autocapitalize="none" spellcheck="false" placeholder="Mis. budi.store"><small class="err"></small></label>
+          <label class="field">Password
+            <span class="pw"><input id="a-pass" type="password" autocomplete="current-password" placeholder="Minimal 6 karakter">
+              <button type="button" class="pw-toggle" id="pw-toggle" aria-label="Tampilkan password"><svg class="ic" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button></span>
+            <small class="err"></small></label>
+          <div class="meter" id="meter" data-for="register"><i></i></div>
+          <label class="field" data-for="register">Ulangi password<input id="a-pass2" type="password" autocomplete="new-password"><small class="err"></small></label>
+          <div class="row-between" data-for="login">
+            <label class="check"><input type="checkbox" id="a-remember" checked> Tetap masuk di perangkat ini</label>
+            <button type="button" class="link" id="a-forgot">Lupa password?</button>
+          </div>
+          <button class="btn btn-primary btn-block" id="a-submit" type="submit"><span>Masuk</span><i class="spin"></i></button>
+        </form>
+
+        <div class="reset-box" id="reset-box" hidden>
+          <b>Atur ulang akun?</b>
+          <p>Password disimpan di perangkat ini, jadi tidak bisa dikirim lewat email. Anda dapat mengatur ulang akun: akun lama dihapus lalu Anda membuat akun baru. <strong>Transaksi, produk, dan pengaturan toko tidak terhapus.</strong></p>
+          <div class="row-actions" style="justify-content:flex-start"><button class="btn btn-danger btn-sm" id="a-reset" type="button">Atur ulang akun</button><button class="btn btn-ghost btn-sm" id="a-cancel" type="button">Batal</button></div>
+        </div>
+        <p class="auth-foot">Data tersimpan secara lokal di perangkat ini.</p>
+      </div>
+    </section>
+  </main>
+  <script src="js/login.js"></script>
+</body>
+</html>

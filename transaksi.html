@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Buat Transaksi · kwintakwinta</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23f2b134'/%3E%3Ctext x='16' y='23' font-size='20' font-weight='700' text-anchor='middle' font-family='sans-serif' fill='%230f1f2b'%3EK%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/auth.js"></script>
+</head>
+<body data-page="transaksi">
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main">
+      <header class="page-head">
+        <div><h1 id="page-title">Buat Transaksi</h1><p class="muted">Isi data, total dihitung otomatis. Simpan dengan Ctrl/Cmd + S.</p></div>
+      </header>
+
+      <div class="tx-grid">
+        <div class="stack">
+          <section class="panel">
+            <h2>Informasi Transaksi</h2>
+            <div class="form-grid">
+              <label class="field">Nomor kuitansi<input id="f-number" readonly></label>
+              <label class="field">Nama customer<input id="f-customer" list="customer-list" placeholder="Kosongkan untuk pembeli umum" autocomplete="off"></label>
+              <label class="field">Tanggal<input type="date" id="f-date"><small class="err"></small></label>
+              <label class="field">Waktu<input type="time" id="f-time"><small class="err"></small></label>
+              <label class="field">Nomor WhatsApp (opsional)<input id="f-phone" inputmode="tel" placeholder="08xxxxxxxxxx"></label>
+              <label class="field">Catatan (opsional)<input id="f-note" autocomplete="off"></label>
+            </div>
+          </section>
+
+          <section class="panel">
+            <h2>Daftar Barang</h2>
+            <div id="items" class="items"></div>
+            <small class="err" id="err-general"></small>
+            <button class="btn btn-ghost" id="btn-add" type="button">+ Tambah Barang</button>
+          </section>
+        </div>
+
+        <aside class="summary">
+          <section class="panel">
+            <h2>Ringkasan</h2>
+            <div class="sum-row"><span class="muted">Subtotal</span><strong id="s-subtotal">Rp0</strong></div>
+            <label class="sum-row"><span class="muted">Diskon (Rp)</span><span class="sum-in"><input id="f-discount" class="money" inputmode="numeric" placeholder="0"><small class="err"></small></span></label>
+            <label class="sum-row"><span class="muted">Ongkir (Rp)</span><span class="sum-in"><input id="f-shipping" class="money" inputmode="numeric" placeholder="0"></span></label>
+            <div class="grand"><span>Grand Total</span><strong id="s-total">Rp0</strong></div>
+          </section>
+
+          <section class="panel">
+            <h2>Pembayaran</h2>
+            <div class="methods" id="methods" role="group" aria-label="Metode pembayaran"></div>
+            <div class="sum-row"><span class="muted">Total tagihan</span><strong id="p-total">Rp0</strong></div>
+            <label class="field">Jumlah dibayar (Rp)
+              <input id="f-paid" class="money" inputmode="numeric" placeholder="0"><small class="err"></small>
+            </label>
+            <button class="link" id="btn-exact" type="button">Isi uang pas</button>
+            <div class="pay-result" id="pay-result"><span id="pay-label">Kembalian</span><strong id="pay-value">Rp0</strong></div>
+            <button class="btn btn-primary btn-block" id="btn-save" type="button">Simpan &amp; Buat Kuitansi</button>
+          </section>
+        </aside>
+      </div>
+    </main>
+  </div>
+
+  <nav class="bottomnav" id="bottomnav" aria-label="Navigasi utama"></nav>
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+  <datalist id="product-list"></datalist>
+  <datalist id="customer-list"></datalist>
+
+  <script src="js/utils.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/product.js"></script>
+  <script src="js/customer.js"></script>
+  <script src="js/transaction.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/transaksi.js"></script>
+</body>
+</html>

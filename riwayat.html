@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Riwayat Penjualan · kwintakwinta</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23f2b134'/%3E%3Ctext x='16' y='23' font-size='20' font-weight='700' text-anchor='middle' font-family='sans-serif' fill='%230f1f2b'%3EK%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/auth.js"></script>
+</head>
+<body data-page="riwayat">
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main">
+      <header class="page-head">
+        <div><h1>Riwayat Penjualan</h1><p class="muted" id="summary"></p></div>
+        <a class="btn btn-primary" href="transaksi.html">+ Buat Transaksi</a>
+      </header>
+
+      <section class="panel filters">
+        <label class="field f-q">Cari<input id="f-q" type="search" placeholder="Nomor kuitansi, nama customer, atau nama barang (Ctrl/Cmd + K)" autocomplete="off"></label>
+        <label class="field">Tanggal
+          <select id="f-range">
+            <option value="all">Semua tanggal</option><option value="today">Hari ini</option><option value="yesterday">Kemarin</option>
+            <option value="7d">7 hari terakhir</option><option value="month">Bulan ini</option><option value="custom">Custom…</option>
+          </select></label>
+        <label class="field">Metode pembayaran
+          <select id="f-method"><option value="all">Semua</option><option>Cash</option><option>Transfer</option><option>QRIS</option><option>E-Wallet</option><option>Debit</option><option>Kredit</option><option>Lainnya</option></select></label>
+        <label class="field">Urutkan
+          <select id="f-sort"><option value="newest">Terbaru</option><option value="oldest">Terlama</option><option value="high">Total terbesar</option><option value="low">Total terkecil</option></select></label>
+        <div class="custom-range" id="custom-range" hidden>
+          <label class="field">Dari<input type="date" id="f-from"></label>
+          <label class="field">Sampai<input type="date" id="f-to"></label>
+        </div>
+      </section>
+
+      <section class="panel" style="margin-top:20px"><div id="list"></div></section>
+    </main>
+  </div>
+  <nav class="bottomnav" id="bottomnav" aria-label="Navigasi utama"></nav>
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+
+  <script src="js/utils.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/product.js"></script>
+  <script src="js/transaction.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/riwayat.js"></script>
+</body>
+</html>
